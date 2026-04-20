@@ -4,14 +4,13 @@ import { ThemeContext } from '../App';
 
 function Skills() {
     const { theme } = useContext(ThemeContext);
-    const skills = [
-        'C', 'C++', 'Python', 'JavaScript', 'SQL',
-        'Node.js', 'Express', 'Flask', 'React',
-        'PostgreSQL', 'MongoDB',
-        'Docker', 'Kubernetes', 'AWS',
-        'REST APIs', 'Microservices',
-        'Git', 'Linux', 'CI/CD',
-        'Machine Learning', 'NLP','OOPS'
+    const skillsCategories = [
+        { title: 'Languages', items: ['C++', 'Python', 'JavaScript (ES6+)', 'SQL', 'Bash'] },
+        { title: 'Backend', items: ['Node.js', 'Express', 'Flask', 'FastAPI', 'REST APIs', 'JWT/Auth', 'Microservices'] },
+        { title: 'Frontend', items: ['React.js', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'Redux'] },
+        { title: 'Database', items: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL'] },
+        { title: 'DevOps & Cloud', items: ['Docker', 'Kubernetes', 'AWS (EC2, S3)', 'CI/CD', 'Nginx'] },
+        { title: 'Tools & Systems', items: ['Git/GitHub', 'Postman', 'Linux', 'System Design', 'Unit Testing'] }
     ];
 
     const containerVariants = {
@@ -19,16 +18,16 @@ function Skills() {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.05,
+                staggerChildren: 0.1,
                 delayChildren: 0.2
             }
         }
     };
 
     const itemVariants = {
-        hidden: { opacity: 0, y: 20, scale: 0.9 },
+        hidden: { opacity: 0, y: 20 },
         visible: {
-            opacity: 1, y: 0, scale: 1,
+            opacity: 1, y: 0,
             transition: { type: "spring", stiffness: 100, damping: 12 }
         }
     };
@@ -85,50 +84,37 @@ function Skills() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
-                    className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                 >
-                    {skills.map((skill, i) => (
+                    {skillsCategories.map((category, i) => (
                         <motion.div
                             key={i}
                             variants={itemVariants}
-                            whileHover={{
-                                scale: 1.05, y: -8,
-                                transition: { type: "spring", stiffness: 400, damping: 10 }
-                            }}
-                            className="group relative"
+                            className={`p-8 rounded-3xl backdrop-blur-sm border-2 transition-all duration-300 ${
+                                theme === "dark"
+                                    ? "bg-[#5e6472]/30 border-[#b8f2e6]/20 hover:border-[#b8f2e6]/50"
+                                    : "bg-white/80 border-[#aed9e0]/30 hover:border-[#aed9e0]/60"
+                            }`}
                         >
-                            <motion.div
-                                className={`relative p-6 rounded-2xl backdrop-blur-sm border transition-all duration-300 ${
-                                    theme === "dark"
-                                        ? "bg-[#b8f2e6]/10 border-[#b8f2e6]/20 hover:bg-[#b8f2e6]/20 hover:border-[#b8f2e6]/40"
-                                        : "bg-[#aed9e0]/30 border-[#aed9e0]/40 hover:bg-[#aed9e0]/50 hover:border-[#aed9e0]/60"
-                                }`}
-                            >
-                                {/* Shine effect */}
-                                <motion.div
-                                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                                    style={{
-                                        background: theme === "dark"
-                                            ? "linear-gradient(135deg, transparent 0%, rgba(184, 242, 230, 0.1) 50%, transparent 100%)"
-                                            : "linear-gradient(135deg, transparent 0%, rgba(174, 217, 224, 0.2) 50%, transparent 100%)"
-                                    }}
-                                />
-
-                                <span className={`relative text-base md:text-lg font-semibold text-center block ${
-                                    theme === "dark" ? "text-[#b8f2e6]" : "text-[#5e6472]"
-                                }`}>
-                                    {skill}
-                                </span>
-
-                                {/* Floating dot */}
-                                <motion.div
-                                    className={`absolute -top-1 -right-1 w-2 h-2 rounded-full opacity-0 group-hover:opacity-100 ${
-                                        theme === "dark" ? "bg-[#b8f2e6]" : "bg-[#5e6472]"
-                                    }`}
-                                    animate={{ scale: [1, 1.5, 1] }}
-                                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                                />
-                            </motion.div>
+                            <h3 className={`text-2xl font-bold mb-6 ${
+                                theme === "dark" ? "text-[#b8f2e6]" : "text-[#5e6472]"
+                            }`}>
+                                {category.title}
+                            </h3>
+                            <div className="flex flex-wrap gap-3">
+                                {category.items.map((skill, idx) => (
+                                    <span
+                                        key={idx}
+                                        className={`px-4 py-2 rounded-xl text-sm font-semibold transition-colors ${
+                                            theme === "dark"
+                                                ? "bg-[#b8f2e6]/10 text-[#b8f2e6] hover:bg-[#b8f2e6]/20"
+                                                : "bg-[#aed9e0]/20 text-[#5e6472] hover:bg-[#aed9e0]/40"
+                                        }`}
+                                    >
+                                        {skill}
+                                    </span>
+                                ))}
+                            </div>
                         </motion.div>
                     ))}
                 </motion.div>

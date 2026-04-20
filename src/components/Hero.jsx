@@ -77,7 +77,7 @@ function Hero() {
             theme === "dark" ? "text-[#aed9e0]/70" : "text-[#5e6472]/60"
           }`}
         >
-          Hello! I'm
+          Hi, I'm
         </motion.div>
 
         {/* Name */}
@@ -126,11 +126,22 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className={`text-xl md:text-2xl lg:text-3xl mb-10 font-light leading-relaxed ${
+          className={`text-xl md:text-2xl lg:text-3xl mb-4 font-light leading-relaxed ${
             theme === "dark" ? "text-[#aed9e0]/90" : "text-[#5e6472]/80"
           }`}
         >
-          Backend Engineer & Systems Thinker
+          Full Stack Developer | ML Enthusiast
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className={`text-base md:text-lg lg:text-xl mb-10 font-light leading-relaxed max-w-2xl mx-auto ${
+            theme === "dark" ? "text-[#aed9e0]/70" : "text-[#5e6472]/60"
+          }`}
+        >
+          Building scalable web apps & secure systems. Passionate about microservices, distributed systems, and performance optimization.
         </motion.p>
 
         {/* Decorative line */}
@@ -183,7 +194,7 @@ function Hero() {
             />
             <span className="relative z-10 flex items-center gap-2.5">
               <FileText size={20} className="flex-shrink-0" />
-              View Resume
+              Download Resume
             </span>
           </motion.button>
 

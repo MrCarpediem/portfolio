@@ -136,15 +136,15 @@ function AboutMe() {
                             }`}
                         >
                             <p className="text-xl md:text-2xl font-light">
-                                Backend-focused Software Engineering student specializing in scalable microservices and secure distributed systems.
+                                I'm a Computer Science student at **IIIT Dharwad**, where my journey into the world of systems and software began. I have a deep-seated passion for building production-grade backend architectures and exploring the intricacies of distributed systems.
                             </p>
 
                             <p className="text-base md:text-lg opacity-90">
-                                Experienced in designing REST APIs, optimizing database performance, and deploying cloud-native applications using Docker and AWS. Currently pursuing B.Tech in CSE at IIIT Dharwad.
+                                My approach to development is rooted in solving real-world problems with scalable and secure solutions. Whether it's architecting microservices with Node.js or implementing robust security protocols like MFA and ZKP, I thrive on technical challenges that push the boundaries of what's possible.
                             </p>
 
                             <p className="text-base md:text-lg opacity-90">
-                                I love tackling complex backend challenges — from building resilient microservices architectures to implementing robust authentication systems with MFA and encryption.
+                                Beyond coding, I am an active participant in hackathons and open-source communities. My goal is to contribute to high-impact projects at top-tier tech companies like Oracle or IBM, where I can apply my skills in backend engineering, security, and machine learning to build the next generation of digital infrastructure.
                             </p>
                         </motion.div>
                     </motion.div>

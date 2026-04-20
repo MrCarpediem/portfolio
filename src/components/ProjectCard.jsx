@@ -3,7 +3,7 @@ import { FaGithub } from 'react-icons/fa';
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
 
-function ProjectCard({ title, description, tags, link, github }) {
+function ProjectCard({ title, description, tags, link, github, image, problemStatement, role, keyFeatures }) {
     const { theme } = useContext(ThemeContext);
 
     return (
@@ -13,9 +13,9 @@ function ProjectCard({ title, description, tags, link, github }) {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             whileHover={{ y: -8 }}
-            className="group relative h-full"
+            className="group relative h-full flex"
         >
-            <div className={`h-full p-8 rounded-3xl backdrop-blur-sm border-2 transition-all duration-500 relative overflow-hidden ${
+            <div className={`flex flex-col h-full w-full p-6 md:p-8 rounded-3xl backdrop-blur-sm border-2 transition-all duration-500 relative overflow-hidden ${
                 theme === "dark"
                     ? "bg-[#5e6472]/30 border-[#b8f2e6]/20 hover:border-[#b8f2e6]/50 hover:bg-[#5e6472]/50"
                     : "bg-white/80 border-[#aed9e0]/30 hover:border-[#aed9e0]/60 hover:bg-white"
@@ -29,52 +29,74 @@ function ProjectCard({ title, description, tags, link, github }) {
                     }`}
                 />
 
-                {/* Corner accent */}
-                <motion.div
-                    className={`absolute top-0 right-0 w-32 h-32 rounded-bl-full opacity-20 ${
-                        theme === "dark" ? "bg-[#b8f2e6]" : "bg-[#aed9e0]"
-                    }`}
-                    animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                />
-
                 <div className="relative z-10 flex flex-col h-full">
                     <motion.h3
-                        className={`text-2xl md:text-3xl font-bold mb-4 ${
+                        className={`text-2xl md:text-3xl font-bold mb-3 ${
                             theme === "dark" ? "text-[#b8f2e6]" : "text-[#5e6472]"
                         }`}
-                        whileHover={{ scale: 1.02 }}
                     >
                         {title}
                     </motion.h3>
 
-                    <p className={`mb-6 leading-relaxed flex-grow ${
+                    {role && (
+                        <p className={`text-sm font-bold uppercase tracking-wider mb-4 px-3 py-1 rounded-lg inline-block w-fit ${
+                            theme === "dark" ? "bg-[#b8f2e6]/10 text-[#b8f2e6]" : "bg-[#aed9e0]/30 text-[#5e6472]"
+                        }`}>
+                            Role: {role}
+                        </p>
+                    )}
+
+                    <p className={`mb-6 text-base leading-relaxed ${
                         theme === "dark" ? "text-[#aed9e0]" : "text-[#5e6472]"
                     } opacity-90`}>
                         {description}
                     </p>
 
-                    <div className="flex flex-wrap gap-2 mb-6">
+                    {problemStatement && (
+                        <div className={`mb-6 p-4 rounded-2xl border-l-4 ${
+                            theme === "dark" 
+                                ? "bg-[#1c1c1c]/40 border-[#b8f2e6]/50 text-[#aed9e0]" 
+                                : "bg-gray-50 border-[#aed9e0] text-[#5e6472]"
+                        }`}>
+                            <p className="text-xs font-bold uppercase mb-2 opacity-60">Problem Statement</p>
+                            <p className="text-sm italic leading-relaxed">"{problemStatement}"</p>
+                        </div>
+                    )}
+
+                    {keyFeatures && (
+                        <div className="mb-6">
+                            <p className={`text-sm font-bold mb-3 uppercase tracking-widest ${
+                                theme === "dark" ? "text-[#b8f2e6]" : "text-[#5e6472]"
+                            }`}>Key Features</p>
+                            <ul className="space-y-2">
+                                {keyFeatures.map((feature, i) => (
+                                    <li key={i} className="flex items-start gap-2 text-sm opacity-90">
+                                        <span className={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 ${
+                                            theme === "dark" ? "bg-[#b8f2e6]" : "bg-[#aed9e0]"
+                                        }`} />
+                                        <span className={theme === "dark" ? "text-[#aed9e0]" : "text-[#5e6472]"}>{feature}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+
+                    <div className="flex flex-wrap gap-2 mb-8 mt-auto">
                         {tags.map((tag, i) => (
-                            <motion.span
+                            <span
                                 key={i}
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.05 }}
-                                whileHover={{ scale: 1.1 }}
-                                className={`px-3 py-1.5 rounded-full text-sm font-semibold transition-all ${
+                                className={`px-3 py-1 rounded-lg text-xs font-semibold ${
                                     theme === "dark"
-                                        ? "bg-[#b8f2e6]/20 text-[#b8f2e6] hover:bg-[#b8f2e6]/30"
-                                        : "bg-[#aed9e0]/40 text-[#5e6472] hover:bg-[#aed9e0]/60"
+                                        ? "bg-[#b8f2e6]/5 text-[#b8f2e6] border border-[#b8f2e6]/20"
+                                        : "bg-[#aed9e0]/10 text-[#5e6472] border border-[#aed9e0]/30"
                                 }`}
                             >
                                 {tag}
-                            </motion.span>
+                            </span>
                         ))}
                     </div>
 
-                    <div className="flex gap-4 items-center pt-4 border-t-2 border-opacity-20 border-current">
+                    <div className="flex gap-4 items-center pt-4 border-t-2 border-opacity-10 border-current">
                         {github && (
                             <motion.a
                                 href={github}
@@ -82,14 +104,14 @@ function ProjectCard({ title, description, tags, link, github }) {
                                 rel="noopener noreferrer"
                                 whileHover={{ scale: 1.05, x: 5 }}
                                 whileTap={{ scale: 0.95 }}
-                                className={`flex items-center gap-2 font-semibold transition-colors group/link ${
+                                className={`flex items-center gap-2 font-bold transition-colors group/link ${
                                     theme === "dark"
                                         ? "text-[#b8f2e6] hover:text-[#aed9e0]"
                                         : "text-[#5e6472] hover:text-[#aed9e0]"
                                 }`}
                             >
                                 <FaGithub size={20} />
-                                <span>View Code</span>
+                                <span>Codebase</span>
                                 <svg
                                     className="w-4 h-4 transition-transform group-hover/link:translate-x-1"
                                     fill="none"

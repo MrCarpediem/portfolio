@@ -8,22 +8,49 @@ function Projects() {
 
     const projects = [
         {
-            title: 'E-commerce Microservices Platform',
-            description: 'Designed a scalable microservices architecture with 5+ independent services, 15+ RESTful APIs, Docker containerization, and optimized MongoDB indexing reducing response latency by ~30%.',
-            tags: ['Node.js', 'Express', 'React', 'MongoDB', 'Docker', 'REST APIs'],
-            github: 'https://github.com/MrCarpediem/ecommerce-microservices'
+            title: '🔐 MFA Password Manager',
+            description: 'A secure, end-to-end encrypted password management system featuring multi-factor authentication (MFA) and biometric verification.',
+            problemStatement: 'Existing password managers often lack robust multi-factor authentication and transparent security protocols for sensitive data storage.',
+            role: 'Lead Backend Developer',
+            keyFeatures: [
+                'AES-256 GCM Encryption for data at rest',
+                'TOTP-based Multi-Factor Authentication',
+                'Secure session management with JWT',
+                'Real-time breach monitoring via HaveIBeenPwned API'
+            ],
+            tags: ['Node.js', 'React', 'MongoDB', 'Express', 'JWT', 'Encryption'],
+            github: 'https://github.com/MrCarpediem/MFA-Password-Manager',
+            image: '/assets/project-mfa.png'
         },
         {
-            title: 'MFA Password Manager',
-            description: 'Built a secure authentication system with OTP-based MFA, JWT session control, normalized PostgreSQL schema, RBAC, and encrypted credential storage aligned with OWASP security standards.',
-            tags: ['Python', 'Flask', 'PostgreSQL', 'JWT', 'Encryption'],
-            github: 'https://github.com/MrCarpediem/MFA'
+            title: '🔗 Blockchain Identity System',
+            description: 'A decentralized identity management platform built on blockchain, ensuring data sovereignty and tamper-proof user credentials.',
+            problemStatement: 'Centralized identity providers represent a single point of failure and often exploit user data for advertising.',
+            role: 'Blockchain Engineer',
+            keyFeatures: [
+                'Smart contracts for identity verification',
+                'Decentralized storage using IPFS',
+                'Zero-Knowledge Proofs (ZKP) for privacy',
+                'Seamless wallet integration'
+            ],
+            tags: ['Solidity', 'Web3.js', 'Ethereum', 'IPFS', 'React'],
+            github: 'https://github.com/MrCarpediem/Blockchain-Identity',
+            image: '/assets/project-blockchain.png'
         },
         {
-            title: 'NewsSense-AI',
-            description: 'End-to-end ML pipeline for sentiment analysis and topic classification achieving ~85% accuracy, with real-time REST inference APIs delivering sub-200ms latency.',
-            tags: ['Python', 'NLP', 'Machine Learning', 'Flask', 'API'],
-            github: 'https://github.com/MrCarpediem/NewsSense-AI'
+            title: '📊 NewsSense-AI (ML System)',
+            description: 'An advanced NLP pipeline for real-time news classification and sentiment analysis, processing 1000+ articles daily.',
+            problemStatement: 'Recruiters and analysts are overwhelmed by information overload and need automated ways to categorize news relevance.',
+            role: 'ML Engineer',
+            keyFeatures: [
+                'Real-time news scraping and ingestion',
+                'Transformer-based classification (BERT)',
+                'Automated sentiment scoring',
+                'FastAPI backend for low-latency inference'
+            ],
+            tags: ['Python', 'NLP', 'TensorFlow', 'FastAPI', 'AWS'],
+            github: 'https://github.com/MrCarpediem/NewsSense-AI',
+            image: '/assets/project-ml.png'
         }
     ];
 

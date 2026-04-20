@@ -9,6 +9,7 @@ import Education from './components/Education.jsx';
 import AboutMe from './components/AboutMe.jsx';
 import Skills from './components/Skills.jsx';
 import Contact from './components/Contact.jsx';
+import Experience from './components/Experience.jsx';
 
 export const ThemeContext = createContext();
 
@@ -136,6 +137,7 @@ function App() {
         <Projects />
         <AboutMe />
         <Skills />
+        <Experience />
         <Contact />
 
         {/* Fixed Hire Me Button */}
