@@ -8,45 +8,45 @@ function Projects() {
 
     const projects = [
         {
-            title: '🔐 MFA Password Manager',
-            description: 'A secure, end-to-end encrypted password management system featuring multi-factor authentication (MFA) and biometric verification.',
-            problemStatement: 'Existing password managers often lack robust multi-factor authentication and transparent security protocols for sensitive data storage.',
+            title: '🛒 E-commerce Microservices',
+            description: 'A scalable, production-grade e-commerce platform built using a microservices architecture with independent services for Auth, Product, and Orders.',
+            problemStatement: 'Monolithic e-commerce apps often struggle with scalability and independent deployment of features.',
+            role: 'Backend Architect',
+            keyFeatures: [
+                'Independently deployable microservices using Docker',
+                'Event-driven communication with message queues',
+                'Centralized API Gateway for request routing',
+                'JWT-based authentication and service-to-service security'
+            ],
+            tags: ['Node.js', 'React', 'MongoDB', 'Docker', 'Redis'],
+            github: 'https://github.com/MrCarpediem/ecommerce-microservices',
+            image: '/assets/project-ecommerce.png'
+        },
+        {
+            title: '📊 Finance Dashboard',
+            description: 'A real-time financial tracking platform designed with high-performance microservices to process and visualize transactional data.',
+            problemStatement: 'Existing finance trackers often have high latency when processing large volumes of concurrent transactions.',
             role: 'Lead Backend Developer',
             keyFeatures: [
-                'AES-256 GCM Encryption for data at rest',
-                'TOTP-based Multi-Factor Authentication',
-                'Secure session management with JWT',
-                'Real-time breach monitoring via HaveIBeenPwned API'
+                'Optimized PostgreSQL queries for sub-100ms response times',
+                'Real-time data visualization with Recharts',
+                'RBAC (Role-Based Access Control) for data security',
+                'Automated financial reporting service'
             ],
-            tags: ['Node.js', 'React', 'MongoDB', 'Express', 'JWT', 'Encryption'],
-            github: 'https://github.com/MrCarpediem/MFA-Password-Manager',
-            image: '/assets/project-mfa.png'
+            tags: ['Flask', 'Node.js', 'PostgreSQL', 'Nginx', 'Docker'],
+            github: 'https://github.com/MrCarpediem/finance-dashboard',
+            image: '/assets/project-finance.png'
         },
         {
-            title: '🔗 Blockchain Identity System',
-            description: 'A decentralized identity management platform built on blockchain, ensuring data sovereignty and tamper-proof user credentials.',
-            problemStatement: 'Centralized identity providers represent a single point of failure and often exploit user data for advertising.',
-            role: 'Blockchain Engineer',
-            keyFeatures: [
-                'Smart contracts for identity verification',
-                'Decentralized storage using IPFS',
-                'Zero-Knowledge Proofs (ZKP) for privacy',
-                'Seamless wallet integration'
-            ],
-            tags: ['Solidity', 'Web3.js', 'Ethereum', 'IPFS', 'React'],
-            github: 'https://github.com/MrCarpediem/Blockchain-Identity',
-            image: '/assets/project-blockchain.png'
-        },
-        {
-            title: '📊 NewsSense-AI (ML System)',
-            description: 'An advanced NLP pipeline for real-time news classification and sentiment analysis, processing 1000+ articles daily.',
-            problemStatement: 'Recruiters and analysts are overwhelmed by information overload and need automated ways to categorize news relevance.',
+            title: '🧠 NewsSense-AI',
+            description: 'An advanced NLP pipeline for real-time news classification and sentiment analysis using transformer-based models.',
+            problemStatement: 'Filtering relevant information from thousands of news articles daily is a significant challenge for analysts.',
             role: 'ML Engineer',
             keyFeatures: [
-                'Real-time news scraping and ingestion',
-                'Transformer-based classification (BERT)',
-                'Automated sentiment scoring',
-                'FastAPI backend for low-latency inference'
+                'BERT-based text classification system',
+                'Real-time scraping and processing pipeline',
+                'FastAPI for low-latency inference',
+                'Scalable AWS deployment'
             ],
             tags: ['Python', 'NLP', 'TensorFlow', 'FastAPI', 'AWS'],
             github: 'https://github.com/MrCarpediem/NewsSense-AI',

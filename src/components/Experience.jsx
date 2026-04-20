@@ -8,18 +8,6 @@ function Experience() {
 
   const experiences = [
     {
-      title: 'Smart India Hackathon Participant',
-      company: 'Ministry of Education, Govt. of India',
-      period: '2023',
-      location: 'National Level',
-      type: 'Innovation',
-      description: [
-        'Developed a prototype for secure document verification using blockchain technology.',
-        'Collaborated in a team of 6 to design the end-to-end architecture and user interface.',
-        'Optimized smart contract gas fees by 20% through efficient coding practices.'
-      ],
-    },
-    {
       title: 'Competitive Programming & DSA',
       company: 'LeetCode, HackerRank, GeeksforGeeks',
       period: '2022 – Present',
@@ -29,18 +17,6 @@ function Experience() {
         'Solved 400+ Data Structures and Algorithms problems across multiple competitive programming platforms.',
         'Developed a strong foundation in problem-solving, algorithms, and system design.',
         'Consistently participated in coding contests to improve analytical thinking.'
-      ],
-    },
-    {
-      title: 'Certifications & Learning',
-      company: 'AWS, Google Cloud, Coursera',
-      period: '2023 – Present',
-      location: 'Remote',
-      type: 'Upskilling',
-      description: [
-        'AWS Certified Cloud Practitioner (In progress/Completed).',
-        'Deep Learning Specialization by DeepLearning.AI.',
-        'Completed advanced courses in Distributed Systems and Computer Networks.'
       ],
     }
   ];
